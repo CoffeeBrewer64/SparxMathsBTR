@@ -1,9 +1,9 @@
 {
-    "name": "SparxSolver",
-    "version": "5.2.1",
-    "description": "Sparx with QOL and NO BOOKWORK CODES",
+    "name": "SparxMathsBTR",
+    "version": "5.2.2",
+    "description": "Sparx with quality of life changes.",
     "manifest_version": 3,
-    "author": "C0lide",
+    "author": "CoffeeBrewer64",
     "host_permissions": [
         "*://www.sparxmaths.uk/*",
         "https://auth.sparxmaths.uk/*"
@@ -15,7 +15,7 @@
         "default_icon": {
             "128": "assets/logo.png"
         },
-        "default_title": "SparxSolver"
+        "default_title": "SparxMathsBTR"
     },
     "permissions": [
         "activeTab",

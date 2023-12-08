@@ -1,3 +1,6 @@
+// SparxMathsBTR
+// Original code by c0lide
+// Updated code by CoffeeBrewer64
 (function() {
 	const P1 = {
 		MediaQuery: {
@@ -165,11 +168,11 @@
 			}
 		},
 		Ir = {
-			user: "https://github.com/c0lide",
+			user: "https://github.com/CoffeeBrewer64",
 			get plain() {
-				return this.user + "/SparxSolver"
+				return this.user + "/SparxMathsBTR"
 			},
-			raw: "https://raw.githubusercontent.com/c0lide/SparxSolver"
+			raw: "https://raw.githubusercontent.com/CoffeeBrewer64/SparxMathsBTR"
 		};
 	var U1 = {
 		name: j1,
@@ -10729,11 +10732,11 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			...t
 		})
 	};
-	var cl = "SparxSolver",
-		dl = "5.2.1",
-		fl = "Sparx with QOL and NO BOOKWORK CODES",
+	var cl = "SparxMathsBTR",
+		dl = "5.2.2",
+		fl = "Sparx with quality of life changes.",
 		pl = 3,
-		vl = "C0lide",
+		vl = "CoffeeBrewer64",
 		gl = ["*://www.sparxmaths.uk/*", "https://auth.sparxmaths.uk/*"],
 		bl = {
 			128: "assets/logo.png"
@@ -10742,7 +10745,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			default_icon: {
 				128: "assets/logo.png"
 			},
-			default_title: "SparxSolver"
+			default_title: "SparxMathsBTR"
 		},
 		wl = ["activeTab", "storage", "downloads"],
 		xl = [{
@@ -10851,7 +10854,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		React: ze
 	} = t0, Al = [{
 		label: "Logger",
-		sublabel: "Toggles SparxSolver's custom Logger in the Developer console.",
+		sublabel: "Toggles SparxMathBTR's custom logger in the Developer console.",
 		option: "logger"
 	}, {
 		label: "Anonymize Name",
@@ -10888,7 +10891,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		}, Ae.createElement(Me, {
 			label: Ae.createElement("div", {
 				style: X.merge(r => [r.flex, r.align])
-			}, Ae.createElement("h1", null, "Welcome to SparxSolver!"), Ae.createElement(El, {
+			}, Ae.createElement("h1", null, "Welcome to SparxMathsBTR!"), Ae.createElement(El, {
 				text: "Back",
 				style: {
 					marginLeft: 10
