@@ -147,15 +147,15 @@
 			}), localStorage.setItem(this.name, "{}")
 		}
 	};
-	const C0 = {
+	const data_save = {
 			colors: new Ve("SparxSolverCustomTheme", !1),
 			preferences: new Ve("SparxSolverPreferences", !1),
 			bookwork: new Ve("SparxSolverBookwork")
 		},
 		{
 			preferences: fe
-		} = C0,
-		j1 = {
+		} = data_save,
+		custom_name = {
 			defaults: {
 				firstName: "First name",
 				lastName: "Last name"
@@ -167,7 +167,7 @@
 				return fe.get("shouldUseName") ? fe.get("betterLastName") || this.defaults.lastName : fe.get("lastName")
 			}
 		},
-		Ir = {
+		repo_info = {
 			user: "https://github.com/CoffeeBrewer64",
 			get plain() {
 				return this.user + "/SparxMathsBTR"
@@ -175,9 +175,9 @@
 			raw: "https://raw.githubusercontent.com/CoffeeBrewer64/SparxMathsBTR"
 		};
 	var U1 = {
-		name: j1,
-		repository: Ir,
-		getImage: r => `${Ir.raw}/main/extension/assets/${r}`,
+		name: custom_name,
+		repository: repo_info,
+		getImage: r => `${repo_info.raw}/main/extension/assets/${r}`,
 		capitalize: r => r.trim().replace(/^\w/, e => e.toUpperCase()),
 		noop: () => {}
 	};
@@ -239,7 +239,7 @@
 		for (let o = 0; o < e; o++) i = n(i);
 		return i
 	};
-	async function X1(r, e, t = 100, a = 100) {
+	async function lazyDefine(r, e, t = 100, a = 100) {
 		let n = 0;
 		for (; n < t;) {
 			const i = r();
@@ -249,11 +249,11 @@
 		return null
 	}
 
-	function Z1(r, e = "/student") {
+	function navigate(r, e = "/student") {
 		SparxSolver.navigation.navigator.replace(e ? `${e}${r}` : r)
 	}
 
-	function K1(r) {
+	function is_empty(r) {
 		for (const e in r) return !1;
 		return !0
 	}
@@ -262,9 +262,9 @@
 			findInReactTree: W1,
 			findInTree: Or,
 			findReact: Y1,
-			lazyDefine: X1,
-			navigate: Z1,
-			isEmpty: K1
+			lazyDefine: lazyDefine,
+			navigate: navigate,
+			isEmpty: is_empty
 		},
 		Lr = (...r) => r.reduce((e, t) => ({
 			...e,
@@ -402,9 +402,9 @@
 	const {
 		React: Pr
 	} = le.common, ve = (r, e) => {
-		const [t, a] = Pr.useState(C0[e].get(r));
+		const [t, a] = Pr.useState(data_save[e].get(r));
 		return Pr.useLayoutEffect(() => {
-			C0[e].set(r, t)
+			data_save[e].set(r, t)
 		}, [t]), [t, a]
 	};
 	var Q1 = Object.freeze({
@@ -10499,7 +10499,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		};
 	const {
 		preferences: Qi
-	} = C0, {
+	} = data_save, {
 		capitalize: el
 	} = l0, dt = {
 		log: "#ffbded",
@@ -11028,7 +11028,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	const {
 		preferences: Ll,
 		colors: Fl
-	} = C0, vt = {
+	} = data_save, vt = {
 		raw: ["darkest", "dark", "medium", "light", "lightest", "shine"],
 		tint: ["hue", "intensity"],
 		shadow: ["small", "medium", "large"]
@@ -11158,7 +11158,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		React: d0
 	} = t0, {
 		colors: Wl
-	} = C0, {
+	} = data_save, {
 		capitalize: Yl
 	} = l0, {
 		styles: Ar
@@ -11298,7 +11298,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	const bt = {
 			Theming: z0,
 			StorageHandler: Ve,
-			storages: C0
+			storages: data_save
 		},
 		{
 			React: y0
@@ -11376,7 +11376,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		navigate: us
 	} = l0, {
 		bookwork: hs
-	} = C0, {
+	} = data_save, {
 		merge: ms,
 		styles: me
 	} = w0({
@@ -11606,7 +11606,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		isEmpty: Br
 	} = l0, {
 		bookwork: $1
-	} = C0;
+	} = data_save;
 
 	function Ds(r) {
 		const e = [];
@@ -11669,7 +11669,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	} = l0, {
 		bookwork: $s,
 		preferences: Is
-	} = C0, {
+	} = data_save, {
 		React: re
 	} = t0, {
 		styles: Os
