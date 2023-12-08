@@ -213,13 +213,13 @@
 		}
 	}
 
-	function W1(r, e = a => a, t = {}) {
+	function findInReactTree(r, e = a => a, t = {}) {
 		return Or(r, e, {
 			walkable: ["props", "children"],
 			...t
 		})
 	}
-	const Y1 = (r, e = 0) => {
+	const findReact = (r, e = 0) => {
 		if (!r) return null;
 		const t = Object.keys(r).find(o => o.startsWith("__reactFiber$") || o.startsWith("__reactInternalInstance$") || o.startsWith("__reactContainer$")) ?? "",
 			a = r[t];
@@ -259,9 +259,9 @@
 	}
 	const l0 = {
 			...U1,
-			findInReactTree: W1,
+			findInReactTree: findInReactTree,
 			findInTree: Or,
-			findReact: Y1,
+			findReact: findReact,
 			lazyDefine: lazyDefine,
 			navigate: navigate,
 			isEmpty: is_empty
@@ -304,7 +304,7 @@
 			React: T0
 		} = le.common,
 		{
-			merge: zt
+			merge: merge
 		} = w0({
 			body: {
 				marginBottom: "1em",
@@ -331,7 +331,7 @@
 			children: r,
 			style: e
 		}) => T0.createElement("div", {
-			style: zt(t => [t.body, e ?? {}])
+			style: merge(t => [t.body, e ?? {}])
 		}, r),
 		pe = ({
 			title: r,
@@ -354,11 +354,11 @@
 					onClick: () => i(o => !o)
 				} : {}
 			}, t && T0.createElement("div", {
-				style: zt(o => [o.arrow, {
+				style: merge(o => [o.arrow, {
 					rotate: n ? "0deg" : "90deg"
 				}])
 			}, T0.createElement("h2", null, "\u25B6")), r && T0.createElement("div", null, T0.createElement(At, null, r))), e && T0.createElement("div", {
-				style: zt(o => [o.bodyWrapper, {
+				style: merge(o => [o.bodyWrapper, {
 					maxHeight: n ? "0" : "100%",
 					opacity: n ? "0" : "1"
 				}])
@@ -11541,7 +11541,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	const ws = Tr("b"),
 		xs = Tr("i"),
 		ks = Tr("a");
-	var Pe = Object.freeze({
+	var patcher = Object.freeze({
 		__proto__: null,
 		after: ks,
 		before: ws,
@@ -11553,7 +11553,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	} = l0;
 	async function Ms() {
 		const r = await Ss(() => le.common.React, e => typeof e.useContext == "function" && typeof e.createElement == "function");
-		Pe.after("useContext", r, (e, t) => {
+		patcher.after("useContext", r, (e, t) => {
 			t && t.router && t.navigator && (SparxSolver.navigation = t, Object.values(E1).filter(a => a.Route).map(a => new a.Route).forEach(a => {
 				t.router.routes[0].children.find(n => n.path === a.path) || t.router.routes[0].children.push({
 					path: a.path,
@@ -11585,7 +11585,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		const r = await N1(() => document.querySelector('[class*="_XPCount_g7mut_"]')),
 			e = await N1(() => document.querySelector('[class*="_DropdownMenuContent_"][role="menu"]'), void 0, 1 / 0),
 			t = zs(e);
-		return Pe.before("render", t.type, a => {
+		return patcher.before("render", t.type, a => {
 			Ts.applyLabel(r);
 			const n = As(a[0], i => Array.isArray(i.children) && i.className.includes("_DropdownMenuContent_"));
 			n && Object.values(E1).filter(i => i.Item).map(i => new i.Item).forEach(i => {
@@ -11670,7 +11670,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		bookwork: $s,
 		preferences: Is
 	} = data_save, {
-		React: re
+		React: react
 	} = t0, {
 		styles: Os
 	} = w0({
@@ -11684,31 +11684,31 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		}
 	}), Ls = ({
 		answers: r
-	}) => re.createElement("div", {
+	}) => react.createElement("div", {
 		id: "SparxSolver-wac-content",
 		style: X.merge(e => [e.textCenter, {
 			marginInline: "6em"
 		}])
-	}, re.createElement("h3", {
+	}, react.createElement("h3", {
 		style: {
 			marginInline: "2em"
 		}
-	}, "The three most recent answers for this code are shown below:"), re.createElement("div", {
+	}, "The three most recent answers for this code are shown below:"), react.createElement("div", {
 		style: X.merge(e => [e.flex, e.row, {
 			justifyContent: "space-around"
 		}])
-	}, r.filter(e => e.answers?.length > 0).sort((e, t) => t.date - e.date).slice(0, 3).map(e => re.createElement("div", {
+	}, r.filter(e => e.answers?.length > 0).sort((e, t) => t.date - e.date).slice(0, 3).map(e => react.createElement("div", {
 		style: {
 			marginBlock: "2em"
 		}
-	}, re.createElement("div", {
+	}, react.createElement("div", {
 		style: Os.item
-	}, re.createElement("h6", {
+	}, react.createElement("h6", {
 		style: X.merge(t => [t.flex, t.justify, {
 			fontWeight: "bold",
 			color: "var(--palette-white)"
 		}])
-	}, "(", new Date(e.date).toLocaleString(), ")"), re.createElement(ft, {
+	}, "(", new Date(e.date).toLocaleString(), ")"), react.createElement(ft, {
 		text: e.answers.map(t => isNaN(+t) ? t : `$${t}$`).join(", "),
 		element: "h4",
 		style: {
@@ -11722,7 +11722,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		const e = qs(r);
 		if (!e) return ke.debug("Failed to find React Fiber of WAC:", e);
 		const t = Er(e.memoizedProps, a => a.children === "Submit" && a.onClick);
-		Pe.after("render", e.type, (a, {
+		patcher.after("render", e.type, (a, {
 			props: {
 				children: n
 			}
@@ -11735,7 +11735,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			const m = o[1],
 				p = $s.get(m) ?? [],
 				v = Array.isArray(p) ? p.filter(b => Array.isArray(b.answers)) : [];
-			if (i.find(b => b.props.SparxSolver) || i.push(re.createElement(Ls, {
+			if (i.find(b => b.props.SparxSolver) || i.push(react.createElement(Ls, {
 					answers: v,
 					SparxSolver: !0
 				})), !Is.get("autoBookwork")) return ke.info("Autobookwork is disabled.");
@@ -11764,14 +11764,14 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			subtree: !0
 		}), () => e.disconnect()
 	}
-	const Ps = Promise.allSettled([Es(), Ns(), Hs()]),
+	const patches = Promise.allSettled([Es(), Ns(), Hs()]),
 		Gs = {
 			modules: le,
 			components: Ml,
 			handlers: bt,
 			utilities: l0,
-			patches: Ps,
-			patcher: Pe,
+			patches: patches,
+			patcher: patcher,
 			hooks: Q1,
 			navigation: null
 		};
@@ -11796,7 +11796,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	async function Ws() {
 		Object.entries(Us).forEach(([e, t]) => {
 			wt.get(e) ?? wt.set(e, t)
-		}), Pe.after("defineProperty", Object, (e, t) => {
+		}), patcher.after("defineProperty", Object, (e, t) => {
 			if (t.data?.student && ["firstName", "lastName"].every(a => a in t.data?.student)) {
 				const {
 					student: a
