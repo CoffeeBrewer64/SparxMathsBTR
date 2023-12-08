@@ -1,0 +1,116 @@
+[
+    {
+        "name": "Blue",
+        "colors": {
+            "raw": {
+                "darkest": "#001c3d",
+                "dark": "#004d7d",
+                "medium": "#007dbd",
+                "light": "#33a5ff",
+                "lightest": "#66c9ff",
+                "shine": "#99eaff"
+            },
+            "tint": {
+                "hue": "200deg",
+                "intensity": "0.8"
+            },
+            "shadow": {
+                "small": "#ccf0ff80",
+                "medium": "#ccf0ff99",
+                "large": "#ccf0ffcc"
+            }
+        }
+    },
+    {
+        "name": "Aqua",
+        "colors": {
+            "raw": {
+                "darkest": "#003a36",
+                "dark": "#006e69",
+                "medium": "#009f98",
+                "light": "#00d1c6",
+                "lightest": "#33f6ed",
+                "shine": "#66fcfb"
+            },
+            "tint": {
+                "hue": "165deg",
+                "intensity": "0.8"
+            },
+            "shadow": {
+                "small": "#ccfff280",
+                "medium": "#ccfff299",
+                "large": "#ccfff2cc"
+            }
+        }
+    },
+    {
+        "name": "Green",
+        "colors": {
+            "raw": {
+                "darkest": "#1e5c19",
+                "dark": "#459a30",
+                "medium": "#6edf4a",
+                "light": "#a7ff76",
+                "lightest": "#ccffab",
+                "shine": "#f2ffcf"
+            },
+            "tint": {
+                "hue": "90deg",
+                "intensity": "0.8"
+            },
+            "shadow": {
+                "small": "#f2ffcd80",
+                "medium": "#f2ffcd99",
+                "large": "#f2ffcdcc"
+            }
+        }
+    },
+    {
+        "name": "Creme",
+        "colors": {
+            "raw": {
+                "darkest": "#8d603c",
+                "dark": "#bc8e67",
+                "medium": "#dabf96",
+                "light": "#f4e6ca",
+                "lightest": "#fff3e8",
+                "shine": "#fffbf4"
+            },
+            "tint": {
+                "hue": "30deg",
+                "intensity": "0.8"
+            },
+            "shadow": {
+                "small": "#ffe9d280",
+                "medium": "#ffe9d299",
+                "large": "#ffe9d2cc"
+            }
+        }
+    },
+    {
+        "name": "Dusk",
+        "colors": {
+            "raw": {
+                "darkest": "#0d0d0d",
+                "dark": "#2b2b2b",
+                "medium": "#555555",
+                "light": "#777777",
+                "lightest": "#a0a0a0",
+                "shine": "#d3d3d3"
+            },
+            "tint": {
+                "hue": "0deg",
+                "intensity": "0.0"
+            },
+            "text": {
+                "light": "#ffffff",
+                "dark": "#000000"
+            },
+            "shadow": {
+                "small": "#00000010",
+                "medium": "#00000029",
+                "large": "#0000005c"
+            }
+        }
+    }
+]

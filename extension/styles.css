@@ -1,0 +1,71 @@
+:root {
+    --user-select-accessibility-setting: default !important;
+    --raw-darkest: #5e404b;
+    --raw-dark: #9c7280;
+    --raw-medium: #d1869f;
+    --raw-light: #deafc2;
+    --raw-lightest: #ffe8f1;
+    --raw-shine: #fff0f6;
+
+    --tint: sepia(1) hue-rotate(280deg) saturate(0.8);
+
+    --shadow-small: #f8d2e780;
+    --shadow-medium: #f8d2e799;
+    --shadow-large: #f8d2e7cc;
+
+    --spx-shadow-sm: 0px 2px 2px var(--shadow-small) !important;
+    --spx-shadow-md: 0px 3px 5px var(--shadow-medium) !important;
+    --spx-shadow-lg: 0px 4px 11px -1px var(--shadow-large) !important;
+
+    --palette-dark-blue: var(--raw-darkest) !important;
+    --palette-dark-blue-90: var(--raw-dark) !important;
+    --palette-light-blue: var(--raw-medium) !important;
+    --palette-light-blue-20: var(--raw-lightest) !important;
+    --palette-green: var(--raw-light) !important;
+    --palette-md-green: var(--raw-medium) !important;
+    --palette-md-green-20: var(--raw-lightest) !important;
+    --palette-dark-green: var(--raw-darkest) !important;
+    --palette-amber: var(--raw-dark) !important;
+    --palette-amber-20: var(--raw-light) !important;
+    --palette-red: var(--raw-medium) !important;
+    --palette-red-20: var(--raw-lightest) !important;
+    --palette-purple: var(--raw-medium) !important;
+    --palette-purple-20: var(--raw-lightest) !important;
+    --palette-dark-purple: var(--raw-dark) !important;
+    --palette-blue-grey: var(--raw-lightest) !important;
+    --palette-light-grey: var(--raw-shine) !important;
+    --palette-dark-blue-90-opacity: var(--raw-dark) !important;
+    --palette-green-gradient-start: var(--raw-medium) !important;
+    --palette-green-gradient-stop: var(--palette-green) !important;
+    --palette-blue-gradient-start: var(--raw-light) !important;
+    --palette-blue-gradient-stop: var(--raw-medium) !important;
+    --palette-blue-gradient-stop-light: var(--raw-light) !important;
+    --palette-orange-gradient-start: var(--raw-medium) !important;
+    --palette-orange-gradient-stop: var(--raw-light) !important;
+}
+
+[class*="_PageBackgroundImage_"],
+[class*="_CalculatorIcon_"],
+[alt="Sparx Maths"] {
+    filter: var(--tint) !important;
+}
+
+[class*="_CircleOuter_"] {
+    filter: var(--tint) brightness(90%) !important;
+}
+
+[class*="_Question_"] {
+    --button-colour: var(--raw-medium) !important;
+}
+
+html {
+    overflow: hidden !important;
+}
+
+[class*="_WACContent_"] {
+    justify-content: space-evenly !important;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: var(--raw-darkest);
+}

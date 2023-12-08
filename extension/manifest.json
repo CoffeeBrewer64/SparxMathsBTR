@@ -1,0 +1,49 @@
+{
+    "name": "SparxSolver",
+    "version": "5.2.1",
+    "description": "Sparx with QOL and NO BOOKWORK CODES",
+    "manifest_version": 3,
+    "author": "C0lide",
+    "host_permissions": [
+        "*://www.sparxmaths.uk/*",
+        "https://auth.sparxmaths.uk/*"
+    ],
+    "icons": {
+        "128": "assets/logo.png"
+    },
+    "action": {
+        "default_icon": {
+            "128": "assets/logo.png"
+        },
+        "default_title": "SparxSolver"
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "downloads"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "index.js"
+            ],
+            "css": [
+                "styles.css"
+            ],
+            "matches": [
+                "https://*.sparxmaths.uk/*"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "main.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}
