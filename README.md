@@ -1,44 +1,38 @@
-# <img src="extension/assets/logo.png" style="width: 2rem"> SparxSolver
+> The original repo has been archived. This is a fan continuation of the repo with updates.
 
-> This repo is now archived, no further updates will be made.
+Welcome to **SparxMathsBTR**, a free browser extension designed to assist you with your sparx maths homework.
 
-Welcome to **SparxSolver**, a Free browser extension designed to assist you with your sparx maths homework. Before using this extension, please read the full **terms and conditions** [**here**](https://raw.githubusercontent.com/SintcoLTD/CDN/main/chrome-extension/sparxmaths/TC.md).
+This version of the SparxSolver project has the aim of unarchiving the original project and improving the plugin greatly.
 
+Many unnecessary things have been removed from this version from the original version.
 
- **✩ *If you like this project, consider giving it a star!* ✩**
+Version naming conventions will remain the same.
+
+The last official release from the original SparxSolver was version 5.2.1.
 
 ## Table of Contents
 
-- [ SparxSolver](#-sparxsolver)
+- [SparxSolver](#-sparxsolver)
   - [Table of Contents](#table-of-contents)
-  - [🎬 Autosolve](#-autosolve)
-  - [✨ Features](#-features)
+  - [Features](#-features)
   - [Installation](#installation)
-  - [Statistics](#statistics)
-      - [Statistics Starting from: 15/11/2023](#statistics-starting-from-15112023)
   - [License](#license)
-  - [👏 Acknowledgements](#-acknowledgements)
+  - [Acknowledgements](#-acknowledgements)
 
-
-## 🎬 Autosolve
-
-<p align="center">
-  <img width="70%" src="https://raw.githubusercontent.com/SintcoLTD/CDN/main/chrome-extension/sparxmaths/images/bookwork-code.png">
-</p>
-
-
-## ✨ Features
+## Features
 
 - Bookwork-code bypass
-- **Stores answers** (so you don't need to write them down)
-- **Automatically** highlights the **correct** bookwork check answer
+- Stores answers (so you don't need to write them down)
+- Automatically highlights the correct bookwork check answer
+- Themes
+- Change first name and last name
 
 ## Installation
 
-These instructions explain how to Install SparxSolver browser extension on your computer.
+These instructions explain how to install the SparxSolverBTR browser extension on your computer.
 
 1. **Download the Extension:**
-   - Visit the [Latest Release](https://github.com/c0lide/SparxSolver/releases) page.
+   - Visit the [Latest Release](https://github.com/CoffeeBrewer64/SparxMathsBTR/releases) page.
    - Download the `extension.zip` file.
 
 2. **Extract the Zip File:**
@@ -65,31 +59,13 @@ These instructions explain how to Install SparxSolver browser extension on your 
 
 7. **Verify Installation:**
    - The extension should now appear in the Extensions tab.
-   - Refresh the Sparxmaths website to see the extension in action. (If website is already open)
-
-
-## Statistics
-
-#### Statistics Starting from: 15/11/2023
-
-[![Views Today/Total](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FNajmAjmal%2Fsparxmaths&count_bg=%2356F1F9&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](/)
-
-![Star Counter](https://img.shields.io/github/stars/NajmAjmal/sparxmaths.svg?style=social)
-
+   - Refresh the Sparxmaths website to see the extension in action. (If the website is already open)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
-## 👏 Acknowledgements
+## Acknowledgements
 
-- Thanks to [Glitch](https://glitch.com/) for hosting the "[sparxmaths.glitch.me](https://sparxmaths.glitch.me)" website
-- Thanks to [Shields.io](https://shields.io/) for providing the status badge in this README
-- Thanks to [Caio Rordrigues](https://github.com/caiorss) for [Bookmarklet Maker](https://caiorss.github.io/bookmarklet-maker/)
-- Thanks to all contributors who have helped improve this project
-
-
-`THIS PROGRAM HAS NO CONNECTION WITH SPARXMATHS. SPARX MATHS IS OWNED BY SPARX LTD.`
-
----
+Thanks to all contributors who have helped improve both the original and new versions of this project!

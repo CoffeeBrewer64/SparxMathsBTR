@@ -1,5 +1,7 @@
 ### License & Legal
 
+All contributions to this repository (SparxMathsBTR) is Copyright (c) 2023 CoffeeBrewer64
+
 Incomplete and generally out of date copyright list::
 
         Copyright (C) 2023 Sintco Ltd
