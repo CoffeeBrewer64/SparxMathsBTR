@@ -10900,13 +10900,6 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 				onClick: () => Dl(-1, null)
 			})),
 			sublabel: pt.description,
-			trailing: Ae.createElement("img", {
-				src: Cl("logo.png"),
-				style: {
-					width: "4em"
-				},
-				alt: "Sparx Maths"
-			})
 		})),
 		Rl = [{
 			name: "Blue",
