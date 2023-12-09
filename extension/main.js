@@ -3765,21 +3765,21 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		"''": !0
 	};
 	l(k, h, g, "\u2013", "--", !0), l(k, h, g, "\u2013", "\\textendash"), l(k, h, g, "\u2014", "---", !0), l(k, h, g, "\u2014", "\\textemdash"), l(k, h, g, "\u2018", "`", !0), l(k, h, g, "\u2018", "\\textquoteleft"), l(k, h, g, "\u2019", "'", !0), l(k, h, g, "\u2019", "\\textquoteright"), l(k, h, g, "\u201C", "``", !0), l(k, h, g, "\u201C", "\\textquotedblleft"), l(k, h, g, "\u201D", "''", !0), l(k, h, g, "\u201D", "\\textquotedblright"), l(s, h, g, "\xB0", "\\degree", !0), l(k, h, g, "\xB0", "\\degree"), l(k, h, g, "\xB0", "\\textdegree", !0), l(s, h, g, "\xA3", "\\pounds"), l(s, h, g, "\xA3", "\\mathsterling", !0), l(k, h, g, "\xA3", "\\pounds"), l(k, h, g, "\xA3", "\\textsterling", !0), l(s, d, g, "\u2720", "\\maltese"), l(k, d, g, "\u2720", "\\maltese");
-	for (var ea = '0123456789/@."', It = 0; It < ea.length; It++) {
-		var ta = ea.charAt(It);
+	for (var numbers_fewSymbols = '0123456789/@."', It = 0; It < numbers_fewSymbols.length; It++) {
+		var ta = numbers_fewSymbols.charAt(It);
 		l(s, h, g, ta, ta)
 	}
-	for (var ra = '0123456789!@*()-=+";:?/.,', Ot = 0; Ot < ra.length; Ot++) {
-		var aa = ra.charAt(Ot);
+	for (var numbers_manySymbols = '0123456789!@*()-=+";:?/.,', Ot = 0; Ot < numbers_manySymbols.length; Ot++) {
+		var aa = numbers_manySymbols.charAt(Ot);
 		l(k, h, g, aa, aa)
 	}
-	for (var Ke = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", Lt = 0; Lt < Ke.length; Lt++) {
-		var Je = Ke.charAt(Lt);
+	for (var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", Lt = 0; Lt < alphabet.length; Lt++) {
+		var Je = alphabet.charAt(Lt);
 		l(s, h, q, Je, Je), l(k, h, g, Je, Je)
 	}
 	l(s, d, g, "C", "\u2102"), l(k, d, g, "C", "\u2102"), l(s, d, g, "H", "\u210D"), l(k, d, g, "H", "\u210D"), l(s, d, g, "N", "\u2115"), l(k, d, g, "N", "\u2115"), l(s, d, g, "P", "\u2119"), l(k, d, g, "P", "\u2119"), l(s, d, g, "Q", "\u211A"), l(k, d, g, "Q", "\u211A"), l(s, d, g, "R", "\u211D"), l(k, d, g, "R", "\u211D"), l(s, d, g, "Z", "\u2124"), l(k, d, g, "Z", "\u2124"), l(s, h, q, "h", "\u210E"), l(k, h, q, "h", "\u210E");
-	for (var $ = "", u0 = 0; u0 < Ke.length; u0++) {
-		var _ = Ke.charAt(u0);
+	for (var $ = "", u0 = 0; u0 < alphabet.length; u0++) {
+		var _ = alphabet.charAt(u0);
 		$ = String.fromCharCode(55349, 56320 + u0), l(s, h, q, _, $), l(k, h, g, _, $), $ = String.fromCharCode(55349, 56372 + u0), l(s, h, q, _, $), l(k, h, g, _, $), $ = String.fromCharCode(55349, 56424 + u0), l(s, h, q, _, $), l(k, h, g, _, $), $ = String.fromCharCode(55349, 56580 + u0), l(s, h, q, _, $), l(k, h, g, _, $), $ = String.fromCharCode(55349, 56684 + u0), l(s, h, q, _, $), l(k, h, g, _, $), $ = String.fromCharCode(55349, 56736 + u0), l(s, h, q, _, $), l(k, h, g, _, $), $ = String.fromCharCode(55349, 56788 + u0), l(s, h, q, _, $), l(k, h, g, _, $), $ = String.fromCharCode(55349, 56840 + u0), l(s, h, q, _, $), l(k, h, g, _, $), $ = String.fromCharCode(55349, 56944 + u0), l(s, h, q, _, $), l(k, h, g, _, $), u0 < 26 && ($ = String.fromCharCode(55349, 56632 + u0), l(s, h, q, _, $), l(k, h, g, _, $), $ = String.fromCharCode(55349, 56476 + u0), l(s, h, q, _, $), l(k, h, g, _, $))
 	}
 	$ = String.fromCharCode(55349, 56668), l(s, h, q, "k", $), l(k, h, g, "k", $);
@@ -3891,7 +3891,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 				if (m === "boldsymbol") {
 					var w = Hn(i, n, t, o, a);
 					b = w.fontName, x = [w.fontClass]
-				} else u ? (b = sa[m].fontName, x = [m]) : (b = tt(m, t.fontWeight, t.fontShape), x = [m, t.fontWeight, t.fontShape]);
+				} else u ? (b = fontMap[m].fontName, x = [m]) : (b = tt(m, t.fontWeight, t.fontShape), x = [m, t.fontWeight, t.fontShape]);
 				if (et(i, b, n).metrics) return B0(i, b, n, t, o.concat(x));
 				if (Qr.hasOwnProperty(i) && b.slice(0, 10) === "Typewriter") {
 					for (var z = [], T = 0; T < i.length; T++) z.push(B0(i[T], b, n, t, o.concat(x)));
@@ -4060,7 +4060,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			var i;
 			return t === "textbf" && a === "textit" ? i = "BoldItalic" : t === "textbf" ? i = "Bold" : t === "textit" ? i = "Italic" : i = "Regular", n + "-" + i
 		},
-		sa = {
+		fontMap = {
 			mathbf: {
 				variant: "bold",
 				fontName: "Main-Bold"
@@ -4124,7 +4124,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			return m.height = i, m.style.height = A(i), m.style.width = A(n), m
 		},
 		y = {
-			fontMap: sa,
+			fontMap: fontMap,
 			makeSymbol: B0,
 			mathsym: Fn,
 			makeSpan: m0,
@@ -10852,7 +10852,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		placeholder: k1.defaults.lastName
 	}));
 	const {
-		React: ze
+		React: react_settings
 	} = t0, Al = [{
 		label: "Logger",
 		sublabel: "Toggles SparxMathBTR's custom logger in the Developer console.",
@@ -10862,15 +10862,15 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		sublabel: "Allows you to set your own custom first and last name.",
 		option: "shouldUseName",
 		extra() {
-			return ze.createElement(zl, null)
+			return react_settings.createElement(zl, null)
 		}
 	}], Tl = () => Al.map(({
 		extra: r,
 		...e
-	}, t, a) => ze.createElement(ze.Fragment, null, ze.createElement(ml, {
+	}, t, a) => react_settings.createElement(react_settings.Fragment, null, react_settings.createElement(ml, {
 		...e,
-		extra: r && ze.createElement(r, null)
-	}), t !== a.length - 1 && ze.createElement(b0.Dividers.Large, null))), {
+		extra: r && react_settings.createElement(r, null)
+	}), t !== a.length - 1 && react_settings.createElement(b0.Dividers.Large, null))), {
 		React: Ae
 	} = t0, {
 		Section: Bl,
@@ -10886,11 +10886,12 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			marginBottom: "0.5em"
 		}
 	});
+	// Settings tab
 	var ql = () => Ae.createElement(Bl, {
 			collapsable: !1,
 			style: Nl.section
 		}, Ae.createElement(Me, {
-			label: Ae.createElement("div", {
+			label: Ae.createElement("div", { // Make div for settings
 				style: X.merge(r => [r.flex, r.align])
 			}, Ae.createElement("h1", null, "Welcome to SparxMathsBTR!"), Ae.createElement(El, {
 				text: "Back",
@@ -10899,7 +10900,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 				},
 				onClick: () => Dl(-1, null)
 			})),
-			sublabel: pt.description,
+			sublabel: pt.description, // Set description text
 		})),
 		Rl = [{
 			name: "Blue",
@@ -11393,7 +11394,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			transition: "max-height 300ms ease, opacity 300ms ease"
 		}
 	});
-	var cs = () => {
+	var autobookwork_page = () => {
 			const [r, e] = ve("autoBookwork", "preferences"), [t, a] = Q.useState(""), [n, i] = Q.useState({});
 			return Q.createElement(Q.Fragment, null, Q.createElement("div", {
 				style: X.merge(o => [o.flex, o.justify, o.row, me.navigation])
@@ -11462,7 +11463,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 					T1(this, "path", B1)
 				}
 				component() {
-					return ps.createElement(cs, null)
+					return ps.createElement(autobookwork_page, null)
 				}
 			}
 		},
@@ -11495,7 +11496,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		}) || (r[e] = i.o), delete n[e]), Object.keys(n).length == 0 && ce.delete(r), !0) : !1
 	}
 
-	function ys() {
+	function patcher_unpatchAll() {
 		for (const [r, e] of ce.entries())
 			for (const t in e)
 				for (const a of C1)
@@ -11532,21 +11533,21 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			u = () => D1(t, e, o, r);
 		return i[e][r].set(o, a), u
 	};
-	const ws = Tr("b"),
-		xs = Tr("i"),
-		ks = Tr("a");
+	const patcher_before = Tr("b"),
+		patcher_instead = Tr("i"),
+		patcher_after = Tr("a");
 	var patcher = Object.freeze({
 		__proto__: null,
-		after: ks,
-		before: ws,
-		instead: xs,
-		unpatchAll: ys
+		after: patcher_after,
+		before: patcher_before,
+		instead: patcher_instead,
+		unpatchAll: patcher_unpatchAll
 	});
 	const {
-		lazyDefine: Ss
+		lazyDefine: lazyDefine2
 	} = l0;
 	async function Ms() {
-		const r = await Ss(() => le.common.React, e => typeof e.useContext == "function" && typeof e.createElement == "function");
+		const r = await lazyDefine2(() => le.common.React, e => typeof e.useContext == "function" && typeof e.createElement == "function");
 		patcher.after("useContext", r, (e, t) => {
 			t && t.router && t.navigator && (SparxSolver.navigation = t, Object.values(E1).filter(a => a.Route).map(a => new a.Route).forEach(a => {
 				t.router.routes[0].children.find(n => n.path === a.path) || t.router.routes[0].children.push({
@@ -11659,7 +11660,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	const {
 		findReact: qs,
 		findInReactTree: Er,
-		lazyDefine: Rs
+		lazyDefine: lazyDefine3
 	} = l0, {
 		bookwork: $s,
 		preferences: Is
@@ -11747,7 +11748,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		})
 	}
 	async function Hs() {
-		const r = await Rs(() => document.querySelector('[id="root"]'), void 0, 1 / 0),
+		const r = await lazyDefine3(() => document.querySelector('[id="root"]'), void 0, 1 / 0),
 			e = new MutationObserver(function(t) {
 				t.forEach(function(a) {
 					a.type === "childList" && Fs()
@@ -11787,7 +11788,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		shouldUseName: !1,
 		logger: !0
 	};
-	async function Ws() {
+	async function set_name() {
 		Object.entries(Us).forEach(([e, t]) => {
 			wt.get(e) ?? wt.set(e, t)
 		}), patcher.after("defineProperty", Object, (e, t) => {
@@ -11809,5 +11810,5 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		const r = (await Ys(() => document.querySelector('[class*="_SMLogo_g7mut_"]'))).childNodes[0];
 		r.src = Xs("logo.png"), r.style.width = "50px"
 	}
-	Promise.allSettled([Ms(), Vs(), Ws(), Zs()])
+	Promise.allSettled([Ms(), Vs(), set_name(), Zs()]) // Change anon name (and other things)
 })();
