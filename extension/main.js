@@ -167,6 +167,7 @@
 				return fe.get("shouldUseName") ? fe.get("betterLastName") || this.defaults.lastName : fe.get("lastName")
 			}
 		},
+		// Repo info stored here
 		repo_info = {
 			user: "https://github.com/CoffeeBrewer64",
 			get plain() {
@@ -407,7 +408,7 @@
 			data_save[e].set(r, t)
 		}, [t]), [t, a]
 	};
-	var Q1 = Object.freeze({
+	var hooks = Object.freeze({
 		__proto__: null,
 		useStorageValue: ve
 	});
@@ -10790,7 +10791,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		Row: Me,
 		Dividers: je
 	};
-	var Ml = Object.freeze({
+	var components = Object.freeze({
 		__proto__: null,
 		components: b0,
 		default: b0
@@ -11295,7 +11296,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		text: r ? "Disable" : "Enable",
 		onClick: () => e(t => !t)
 	}));
-	const bt = {
+	const handlers = {
 			Theming: z0,
 			StorageHandler: Ve,
 			storages: data_save
@@ -11307,7 +11308,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			storages: {
 				bookwork: as
 			}
-		} = bt,
+		} = handlers,
 		{
 			Section: ns,
 			SectionBody: is,
@@ -11578,7 +11579,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		findInReactTree: As
 	} = l0, {
 		Theming: Ts
-	} = bt, {
+	} = handlers, {
 		React: Bs
 	} = le.common;
 	async function Es() {
@@ -11767,12 +11768,12 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	const patches = Promise.allSettled([Es(), Ns(), Hs()]),
 		Gs = {
 			modules: le,
-			components: Ml,
-			handlers: bt,
+			components: components,
+			handlers: handlers,
 			utilities: l0,
 			patches: patches,
 			patcher: patcher,
-			hooks: Q1,
+			hooks: hooks,
 			navigation: null
 		};
 
@@ -11787,7 +11788,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		storages: {
 			preferences: wt
 		}
-	} = bt, Us = {
+	} = handlers, Us = {
 		themeIndex: 0,
 		autoBookwork: !0,
 		shouldUseName: !1,
