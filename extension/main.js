@@ -11771,9 +11771,17 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			navigation: null
 		};
 
-	function Vs() {
-		window.SparxSolver = Gs, window.__sparxweb && (window.__sparxweb.environment = "development"), window.location.href.includes("SparxSolver") && (window.location.href = window.location.href.replace(/SparxSolver\/.*/g, ""))
-	}
+    function initHref() {
+        window.SparxSolver = Gs;
+        if (window.__sparxweb) {
+            window.__sparxweb.environment = "development";
+        }
+        if (window.location.href.includes("SparxSolver")) {
+            window.location.href = window.location.href.replace(/SparxSolver\/.*/g, "");
+        }
+    }
+
+
 	const {
 		name: I1,
 		lazyDefine: js
@@ -11810,5 +11818,5 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		const r = (await Ys(() => document.querySelector('[class*="_SMLogo_g7mut_"]'))).childNodes[0];
 		r.src = Xs("logo.png"), r.style.width = "50px"
 	}
-	Promise.allSettled([Ms(), Vs(), set_name(), Zs()]) // Change anon name (and other things)
+	Promise.allSettled([Ms(), initHref(), set_name(), Zs()]) // Change anon name (and other things)
 })();
