@@ -17,7 +17,7 @@
 		}
 	};
 
-	function Rr(r, e) {
+	function exfiltrate(r, e) {
 		const t = Symbol(r);
 		let a = !1;
 		return new Promise(n => {
@@ -42,7 +42,7 @@
 			})
 		})
 	}
-	const t0 = new Proxy({}, {
+	const common = new Proxy({}, {
 		get(r, e) {
 			return new Proxy(r[e] ?? {}, {
 				get(t, a) {
@@ -52,13 +52,13 @@
 		}
 	});
 	Object.entries(P1).forEach(([r, e]) => {
-		Rr(e.prop, e.filter).then(t => Object.assign(t0, {
+		exfiltrate(e.prop, e.filter).then(t => Object.assign(common, {
 			[r]: t
 		}))
 	});
 	var le = {
-			exfiltrate: Rr,
-			common: t0
+			exfiltrate: exfiltrate,
+			common: common
 		},
 		G1 = Object.defineProperty,
 		V1 = (r, e, t) => e in r ? G1(r, e, {
@@ -175,7 +175,7 @@
 			},
 			raw: "https://raw.githubusercontent.com/CoffeeBrewer64/SparxMathsBTR"
 		};
-	var U1 = {
+	var repo = {
 		name: custom_name,
 		repository: repo_info,
 		getImage: r => `${repo_info.raw}/main/extension/assets/${r}`,
@@ -183,7 +183,7 @@
 		noop: () => {}
 	};
 
-	function Or(r = {}, e = i => i, {
+	function findInTree(r = {}, e = i => i, {
 		ignore: t = [],
 		walkable: a = [],
 		maxProperties: n = 100
@@ -215,7 +215,7 @@
 	}
 
 	function findInReactTree(r, e = a => a, t = {}) {
-		return Or(r, e, {
+		return findInTree(r, e, {
 			walkable: ["props", "children"],
 			...t
 		})
@@ -259,9 +259,9 @@
 		return !0
 	}
 	const l0 = {
-			...U1,
+			...repo,
 			findInReactTree: findInReactTree,
-			findInTree: Or,
+			findInTree: findInTree,
 			findReact: findReact,
 			lazyDefine: lazyDefine,
 			navigate: navigate,
@@ -379,7 +379,7 @@
 		});
 	const {
 		React: Fr
-	} = t0, {
+	} = common, {
 		merge: Hr
 	} = w0({
 		common: {
@@ -10677,7 +10677,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	});
 	const {
 		React: g0
-	} = t0, {
+	} = common, {
 		merge: ul,
 		styles: hl
 	} = w0({
@@ -10733,7 +10733,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			...t
 		})
 	};
-	var cl = "SparxMathsBTR",
+	var name = "SparxMathsBTR",
 		dl = "5.2.2",
 		fl = "Sparx with quality of life changes.",
 		pl = 3,
@@ -10760,7 +10760,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			matches: ["<all_urls>"]
 		}],
 		pt = {
-			name: cl,
+			name: name,
 			version: dl,
 			description: fl,
 			manifest_version: pl,
@@ -10774,7 +10774,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		};
 	const {
 		React: ee
-	} = t0, {
+	} = common, {
 		repository: xr
 	} = l0;
 	var Sl = () => ee.createElement(Me, {
@@ -10798,7 +10798,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	});
 	const {
 		React: kr
-	} = t0, {
+	} = common, {
 		styles: Sr
 	} = w0({
 		container: {
@@ -10837,7 +10837,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	};
 	const {
 		React: Mr
-	} = t0, {
+	} = common, {
 		name: k1
 	} = l0;
 	var zl = () => Mr.createElement("div", {
@@ -10853,7 +10853,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	}));
 	const {
 		React: react_settings
-	} = t0, Al = [{
+	} = common, Al = [{
 		label: "Logger",
 		sublabel: "Toggles SparxMathBTR's custom logger in the Developer console.",
 		option: "logger"
@@ -10872,7 +10872,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		extra: r && react_settings.createElement(r, null)
 	}), t !== a.length - 1 && react_settings.createElement(b0.Dividers.Large, null))), {
 		React: Ae
-	} = t0, {
+	} = common, {
 		Section: Bl,
 		SolidButton: El
 	} = b0, {
@@ -11066,7 +11066,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	}]);
 	const {
 		React: zr
-	} = t0, {
+	} = common, {
 		styles: Hl
 	} = w0({
 		selector: {
@@ -11097,7 +11097,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	}, a.name))));
 	const {
 		React: te
-	} = t0, {
+	} = common, {
 		capitalize: Gl
 	} = l0, {
 		merge: Vl,
@@ -11151,7 +11151,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	};
 	const {
 		React: d0
-	} = t0, {
+	} = common, {
 		colors: colors
 	} = data_save, {
 		capitalize: Yl
@@ -11202,7 +11202,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	};
 	const {
 		React: he
-	} = t0;
+	} = common;
 	var Zl = () => {
 		const [r] = he.useState(document.querySelector('[class*="_XPCount_g7mut_"]')), [e, t] = ve("themeIndex", "preferences");
 		return he.createElement(Me, {
@@ -11230,7 +11230,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	};
 	const {
 		React: O0
-	} = t0;
+	} = common;
 	var Kl = () => O0.createElement(O0.Fragment, null, O0.createElement(ql, null), O0.createElement(je.Large, null), O0.createElement(pe, {
 			title: "Preferences",
 			style: {
@@ -11251,7 +11251,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		S1 = (r, e, t) => (_l(r, typeof e != "symbol" ? e + "" : e, t), t);
 	const {
 		React: Ql
-	} = t0, {
+	} = common, {
 		navigate: es
 	} = l0, M1 = "/SparxSolver/settings";
 	var ts = {
@@ -11274,7 +11274,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	};
 	const {
 		React: gt
-	} = t0;
+	} = common;
 	var rs = ({
 		enabled: r,
 		setEnabled: e
@@ -11297,7 +11297,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		},
 		{
 			React: y0
-		} = t0,
+		} = common,
 		{
 			storages: {
 				bookwork: as
@@ -11367,7 +11367,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	};
 	const {
 		React: Q
-	} = t0, {
+	} = common, {
 		navigate: us
 	} = l0, {
 		bookwork: hs
@@ -11446,7 +11446,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		T1 = (r, e, t) => (fs(r, typeof e != "symbol" ? e + "" : e, t), t);
 	const {
 		React: ps
-	} = t0, {
+	} = common, {
 		navigate: vs
 	} = l0, B1 = "/SparxSolver/bookwork";
 	var gs = {
@@ -11570,7 +11570,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	const {
 		lazyDefine: N1,
 		findReact: zs,
-		findInReactTree: As
+		findInReactTree: findInReactTree2
 	} = l0, {
 		Theming: Ts
 	} = handlers, {
@@ -11582,7 +11582,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			t = zs(e);
 		return patcher.before("render", t.type, a => {
 			Ts.applyLabel(r);
-			const n = As(a[0], i => Array.isArray(i.children) && i.className.includes("_DropdownMenuContent_"));
+			const n = findInReactTree2(a[0], i => Array.isArray(i.children) && i.className.includes("_DropdownMenuContent_"));
 			n && Object.values(E1).filter(i => i.Item).map(i => new i.Item).forEach(i => {
 				for (const u of n.children)
 					if (u?.props?.text === i.text) return;
@@ -11666,7 +11666,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		preferences: Is
 	} = data_save, {
 		React: react
-	} = t0, {
+	} = common, {
 		styles: Os
 	} = w0({
 		item: {
@@ -11784,7 +11784,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 
 	const {
 		name: I1,
-		lazyDefine: js
+		lazyDefine: lazyDefine5
 	} = l0, {
 		Theming: O1,
 		storages: {
@@ -11807,16 +11807,16 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 				wt.set("firstName", a.firstName), wt.set("lastName", a.lastName), a.firstName = I1.firstName, a.lastName = I1.lastName
 			}
 		});
-		const r = await js(() => document.querySelector('[class*="_XPCount_g7mut_"]'));
+		const r = await lazyDefine5(() => document.querySelector('[class*="_XPCount_g7mut_"]'));
 		O1.setTheme(), O1.applyLabel(r)
 	}
 	const {
-		lazyDefine: Ys,
-		getImage: Xs
+		lazyDefine: lazyDefine4,
+		getImage: getImage
 	} = l0;
 	async function Zs() {
-		const r = (await Ys(() => document.querySelector('[class*="_SMLogo_g7mut_"]'))).childNodes[0];
-		r.src = Xs("logo.png"), r.style.width = "50px"
+		const r = (await lazyDefine4(() => document.querySelector('[class*="_SMLogo_g7mut_"]'))).childNodes[0];
+		r.src = getImage("logo.png"), r.style.width = "50px"
 	}
 	Promise.allSettled([Ms(), initHref(), set_name(), Zs()]) // Change anon name (and other things)
 })();
