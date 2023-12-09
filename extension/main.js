@@ -10733,44 +10733,45 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			...t
 		})
 	};
+	// manifest
 	var name = "SparxMathsBTR",
-		dl = "5.2.2",
-		fl = "Sparx with quality of life changes.",
-		pl = 3,
-		vl = "CoffeeBrewer64",
-		gl = ["*://www.sparxmaths.uk/*", "https://auth.sparxmaths.uk/*"],
-		bl = {
+		version = "5.2.2",
+		description = "Sparx with quality of life changes.",
+		manifest_version = 3,
+		author = "CoffeeBrewer64",
+		host_permissions = ["*://www.sparxmaths.uk/*", "https://auth.sparxmaths.uk/*"],
+		icons = {
 			128: "assets/logo.png"
 		},
-		yl = {
+		action = {
 			default_icon: {
 				128: "assets/logo.png"
 			},
 			default_title: "SparxMathsBTR"
 		},
-		wl = ["activeTab", "storage", "downloads"],
-		xl = [{
+		permissions = ["activeTab", "storage", "downloads"],
+		content_scripts = [{
 			js: ["index.js"],
 			css: ["styles.css"],
 			matches: ["https://*.sparxmaths.uk/*"],
 			run_at: "document_start"
 		}],
-		kl = [{
+		web_accessible_resources = [{
 			resources: ["main.js"],
 			matches: ["<all_urls>"]
 		}],
-		pt = {
+		manifest = {
 			name: name,
-			version: dl,
-			description: fl,
-			manifest_version: pl,
-			author: vl,
-			host_permissions: gl,
-			icons: bl,
-			action: yl,
-			permissions: wl,
-			content_scripts: xl,
-			web_accessible_resources: kl
+			version: version,
+			description: description,
+			manifest_version: manifest_version,
+			author: author,
+			host_permissions: host_permissions,
+			icons: icons,
+			action: action,
+			permissions: permissions,
+			content_scripts: content_scripts,
+			web_accessible_resources: web_accessible_resources
 		};
 	const {
 		React: ee
@@ -10781,8 +10782,8 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		label: ee.createElement(ee.Fragment, null, ee.createElement("h4", null, "Written by", " ", ee.createElement("a", {
 			href: xr.user,
 			target: "blank"
-		}, pt.author), ". Version ", pt.version),),
-		extra: ee.createElement("h4", null, "Thank you for installing ", pt.name, "	")
+		}, manifest.author), ". Version ", manifest.version),),
+		extra: ee.createElement("h4", null, "Thank you for installing ", manifest.name, "	")
 	});
 	const b0 = {
 		...ol,
@@ -10900,7 +10901,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 				},
 				onClick: () => Dl(-1, null)
 			})),
-			sublabel: pt.description, // Set description text
+			sublabel: manifest.description, // Set description text
 		})),
 		Rl = [{
 			name: "Blue",
