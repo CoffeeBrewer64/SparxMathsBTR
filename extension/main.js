@@ -11152,7 +11152,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	const {
 		React: d0
 	} = t0, {
-		colors: Wl
+		colors: colors
 	} = data_save, {
 		capitalize: Yl
 	} = l0, {
@@ -11184,7 +11184,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			text: "Clear colors",
 			style: Ar.button,
 			onClick: () => {
-				Wl.clear(), e(0), setTimeout(() => e(z0.themes.findIndex(n => n.name === "Custom")))
+				colors.clear(), e(0), setTimeout(() => e(z0.themes.findIndex(n => n.name === "Custom")))
 			}
 		})), d0.createElement("div", {
 			style: a ? {} : X.merge(n => [n.flex, n.justify])
