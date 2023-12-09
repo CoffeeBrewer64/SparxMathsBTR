@@ -11568,7 +11568,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		})
 	}
 	const {
-		lazyDefine: N1,
+		lazyDefine: lazyDefine6,
 		findReact: zs,
 		findInReactTree: findInReactTree2
 	} = l0, {
@@ -11577,8 +11577,8 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		React: Bs
 	} = le.common;
 	async function Es() {
-		const r = await N1(() => document.querySelector('[class*="_XPCount_g7mut_"]')),
-			e = await N1(() => document.querySelector('[class*="_DropdownMenuContent_"][role="menu"]'), void 0, 1 / 0),
+		const r = await lazyDefine6(() => document.querySelector('[class*="_XPCount_g7mut_"]')),
+			e = await lazyDefine6(() => document.querySelector('[class*="_DropdownMenuContent_"][role="menu"]'), void 0, 1 / 0),
 			t = zs(e);
 		return patcher.before("render", t.type, a => {
 			Ts.applyLabel(r);
