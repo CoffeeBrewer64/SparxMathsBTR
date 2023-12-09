@@ -18,15 +18,15 @@
 	};
 
 	function exfiltrate(r, e) {
-		const t = Symbol(r);
-		let a = !1;
+		const rSymbol = Symbol(r);
+		let status = !1; // !1 = false
 		return new Promise(n => {
 			Object.defineProperty(Object.prototype, r, {
 				configurable: !0,
 				enumerable: !1,
 				set(i) {
 					if (this === Object.prototype) {
-						a = !0, Object.prototype[t] = i;
+						status = !0, Object.prototype[rSymbol] = i; // Sets status to true
 						return
 					}
 					Object.defineProperty(this, r, {
@@ -34,10 +34,10 @@
 						writable: !0,
 						enumerable: !0,
 						value: i
-					}), (!e || e(this)) && (n(this), a || delete Object.prototype[r])
+					}), (!e || e(this)) && (n(this), status || delete Object.prototype[r])
 				},
 				get() {
-					return this[t]
+					return this[rSymbol]
 				}
 			})
 		})
@@ -581,7 +581,7 @@
 			}
 		};
 
-	function mn(r) {
+	function getDefaultForType(r) {
 		if (r.default) return r.default;
 		var e = r.type,
 			t = Array.isArray(e) ? e[0] : e;
@@ -603,7 +603,7 @@
 			for (var t in Ue)
 				if (Ue.hasOwnProperty(t)) {
 					var a = Ue[t];
-					this[t] = e[t] !== void 0 ? a.processor ? a.processor(e[t]) : e[t] : mn(a)
+					this[t] = e[t] !== void 0 ? a.processor ? a.processor(e[t]) : e[t] : getDefaultForType(a)
 				}
 		}
 		reportNonstrict(e, t, a) {
@@ -8785,7 +8785,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	});
 	var e1 = {
 		mi: "italic",
-		mn: "normal",
+		getDefaultForType: "normal",
 		mtext: "normal"
 	};
 	ue({
@@ -10735,7 +10735,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	};
 	// manifest
 	var name = "SparxMathsBTR",
-		version = "5.2.2",
+		version = "5.2.3",
 		description = "Sparx with quality of life changes.",
 		manifest_version = 3,
 		author = "CoffeeBrewer64",
@@ -10887,6 +10887,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			marginBottom: "0.5em"
 		}
 	});
+
 	// Settings tab
 	var ql = () => Ae.createElement(Bl, {
 			collapsable: !1,
@@ -11547,7 +11548,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	const {
 		lazyDefine: lazyDefine2
 	} = l0;
-	async function Ms() {
+	async function initNavigation() { // chatgpt suggested name lol
 		const r = await lazyDefine2(() => le.common.React, e => typeof e.useContext == "function" && typeof e.createElement == "function");
 		patcher.after("useContext", r, (e, t) => {
 			t && t.router && t.navigator && (SparxSolver.navigation = t, Object.values(E1).filter(a => a.Route).map(a => new a.Route).forEach(a => {
@@ -11660,7 +11661,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	}
 	const {
 		findReact: qs,
-		findInReactTree: Er,
+		findInReactTree: findInReactTree3,
 		lazyDefine: lazyDefine3
 	} = l0, {
 		bookwork: $s,
@@ -11713,20 +11714,20 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 	}))))));
 
 	function Fs() {
-		const r = document.querySelector('[class*="_WACContainer_"]');
-		if (!r) return;
-		const e = qs(r);
-		if (!e) return ke.debug("Failed to find React Fiber of WAC:", e);
-		const t = Er(e.memoizedProps, a => a.children === "Submit" && a.onClick);
-		patcher.after("render", e.type, (a, {
+		const query = document.querySelector('[class*="_WACContainer_"]');
+		if (!query) return;
+		const qsQuery = qs(query);
+		if (!qsQuery) return ke.debug("Failed to find React Fiber of WAC:", qsQuery);
+		const t = findInReactTree3(e.memoizedProps, a => a.children === "Submit" && a.onClick);
+		patcher.after("render", qsQuery.type, (a, {
 			props: {
 				children: n
 			}
 		}) => {
 			!t.isDisabled && t.onClick();
-			const i = Er(n, b => b?.find(x => x.props.className.includes("Bookwork"))),
+			const i = findInReactTree3(n, b => b?.find(x => x.props.className.includes("Bookwork"))),
 				o = i?.find(b => b.props?.className?.includes("Bookwork"))?.props?.children,
-				u = Er(n, b => b.props.choices && b.props.option);
+				u = findInReactTree3(n, b => b.props.choices && b.props.option);
 			if (!o) return;
 			const m = o[1],
 				p = $s.get(m) ?? [],
@@ -11748,19 +11749,19 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 			})
 		})
 	}
-	async function Hs() {
-		const r = await lazyDefine3(() => document.querySelector('[id="root"]'), void 0, 1 / 0),
-			e = new MutationObserver(function(t) {
+	async function patcher_root() {
+		const queryRoot = await lazyDefine3(() => document.querySelector('[id="root"]'), void 0, 1 / 0),
+			mutationObserver = new MutationObserver(function(t) {
 				t.forEach(function(a) {
 					a.type === "childList" && Fs()
 				})
 			});
-		return e.observe(r, {
+		return mutationObserver.observe(queryRoot, {
 			childList: !0,
 			subtree: !0
-		}), () => e.disconnect()
+		}), () => mutationObserver.disconnect()
 	}
-	const patches = Promise.allSettled([Es(), Ns(), Hs()]),
+	const patches = Promise.allSettled([Es(), Ns(), patcher_root()]),
 		Gs = {
 			modules: le,
 			components: components,
@@ -11784,7 +11785,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 
 
 	const {
-		name: I1,
+		name: realname,
 		lazyDefine: lazyDefine5
 	} = l0, {
 		Theming: O1,
@@ -11805,19 +11806,19 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 				const {
 					student: a
 				} = t.data;
-				wt.set("firstName", a.firstName), wt.set("lastName", a.lastName), a.firstName = I1.firstName, a.lastName = I1.lastName
+				wt.set("firstName", a.firstName), wt.set("lastName", a.lastName), a.firstName = realname.firstName, a.lastName = realname.lastName
 			}
 		});
-		const r = await lazyDefine5(() => document.querySelector('[class*="_XPCount_g7mut_"]'));
-		O1.setTheme(), O1.applyLabel(r)
+		const query = await lazyDefine5(() => document.querySelector('[class*="_XPCount_g7mut_"]'));
+		O1.setTheme(), O1.applyLabel(query)
 	}
 	const {
 		lazyDefine: lazyDefine4,
 		getImage: getImage
 	} = l0;
-	async function Zs() {
-		const r = (await lazyDefine4(() => document.querySelector('[class*="_SMLogo_g7mut_"]'))).childNodes[0];
-		r.src = getImage("logo.png"), r.style.width = "50px"
+	async function fetchImage() {
+		const image = (await lazyDefine4(() => document.querySelector('[class*="_SMLogo_g7mut_"]'))).childNodes[0];
+		image.src = getImage("logo.png"), image.style.width = "50px"
 	}
-	Promise.allSettled([Ms(), initHref(), set_name(), Zs()]) // Change anon name (and other things)
+	Promise.allSettled([initNavigation(), initHref(), set_name(), fetchImage()]) // Change anon name (and other things)
 })();
