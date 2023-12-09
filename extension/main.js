@@ -11718,7 +11718,7 @@ l0,-` + (t + 144) + `c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 		if (!query) return;
 		const qsQuery = qs(query);
 		if (!qsQuery) return ke.debug("Failed to find React Fiber of WAC:", qsQuery);
-		const t = findInReactTree3(e.memoizedProps, a => a.children === "Submit" && a.onClick);
+		const t = findInReactTree3(qsQuery.memoizedProps, a => a.children === "Submit" && a.onClick);
 		patcher.after("render", qsQuery.type, (a, {
 			props: {
 				children: n
