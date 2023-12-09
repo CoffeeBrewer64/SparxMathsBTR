@@ -1,1 +1,13 @@
-(function(){async function n(c,t=!1){const e=document.createElement("script");e.src=c,e.async=t,(document.head||document.body||document.documentElement).appendChild(e)}n(window.chrome.runtime.getURL("main.js"))})();
+(function () {
+    async function loadScript(url, async = false) {
+        const scriptElement = document.createElement("script");
+        scriptElement.src = url;
+        scriptElement.async = async;
+
+        // Appending the script to the document head, body, or root element
+        (document.head || document.body || document.documentElement).appendChild(scriptElement);
+    }
+
+    // Loading the "main.js" script from the Chrome runtime URL
+    loadScript(window.chrome.runtime.getURL("main.js"));
+})();
